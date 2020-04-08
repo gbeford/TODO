@@ -1,0 +1,30 @@
+<div class="container">
+  <form role="form" [formGroup]="tForm" (ngSubmit)="add()">
+    <div class="col">
+      <h4 class="">Todo list</h4>
+    </div>
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" formControlName="inputCtrl" placeholder="What do you need to do today?">
+      </div>
+      <div class="col">
+        <button class="ml-1 btn btn-primary">Add</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col pt-2" >
+        <ul class="d-flex flex-column-reverse" *ngFor="let item of list.toDoList">
+
+          <li>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="checkbox" type="checkbox">
+                {{item.toDoItem}}
+                <i class="input-helper"></i></label>
+            </div> <i class="remove mdi mdi-close-circle-outline"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </form>
+</div>
